@@ -128,3 +128,14 @@ List of sites you want to monitor.
 |:------:|:-------------:|:-----------:|
 | url | site's url | yes |
 | name | alias name | no, defaults to `url`|
+
+
+## TODO
+
+- [ ] refine data structure.
+- [ ] add more check methods (like ping).
+
+
+## LICENSE
+
+See [LICENSE.md](LICENSE.md).

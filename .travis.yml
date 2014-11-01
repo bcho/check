@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.3
+- 3.4
+
+install:
+- pip install -r requirements.txt
+- pip install -r requirements-dev.txt
+
+script: make test
+
+notifications:
+    email:
+        on_success: never
+        on_failure: always

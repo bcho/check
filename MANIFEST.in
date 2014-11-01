@@ -1,0 +1,4 @@
+include *.md
+recursive-include docs *.md
+graft */files
+graft */*/files

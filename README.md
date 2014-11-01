@@ -25,21 +25,21 @@ $ check -c config.json
       "email": "besty@example.com"
     }
   ],
-  "reporter": {
+  "reporters": {
     "email": {
       "crendential": {
         "username": "watchmen@example.com",
         "password": "watchmen-passw0rd",
         "smtp": "smtp.example.com:587"
       },
-      "report": {
-        "short": "Site {site} is down!",
-        "long": "Your site {site} is down since {happened_at}!"
+      "formats": {
+        "short": "Site {site['name']} is down!",
+        "long": "Your site {site['name']} is down since {happened_at}!"
       }
     },
     "cli": {
-      "report": {
-        "short": "Site {site} is down!",
+      "formats": {
+        "short": "Site {site['name']} is down!",
         "long": "Check time: {happened_at}"
       }
     }
@@ -71,7 +71,7 @@ Specify list of people you want to notify when a incident happened here.
 - `email`: If user's `email` is provided, they will receive a warning email for the incident.
 
 
-### `reporter`
+### `reporters`
 
 Enabled report generators. Each generator can customize the `incident report` format.
 
@@ -85,9 +85,19 @@ Enabled report generators. Each generator can customize the `incident report` fo
 
 Each `incident report` will contain:
 
-- `site`: site's name
-- `site_url`: site's url
-- `happened_at`: incident happened time string, format is [ISO8601][iso8601].
+- site name
+- site url
+- incident happened time string, format is [ISO8601][iso8601].
+
+```python
+incident_report = {
+    'site': {
+      'name': 'test',
+      'url': 'http://test.domain'
+    },
+    'happened_at': '2014-11-01T15:42:00.000000+00:00'
+}
+```
 
 
 [iso8601]: http://en.wikipedia.org/wiki/ISO_8601

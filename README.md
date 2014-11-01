@@ -1,5 +1,7 @@
 # Check
 
+[![Build Status](https://travis-ci.org/bcho/check.svg)](https://travis-ci.org/bcho/check)
+
 Check your server like a boss.
 
 
